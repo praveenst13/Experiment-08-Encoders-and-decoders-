@@ -48,49 +48,72 @@ D7 = X Y Z
 
 ![image](https://user-images.githubusercontent.com/36288975/171543978-ee2d0671-2846-40a1-8705-507fd6287a49.png)
 ## Figure -03 8 to 3 Decoder 
-
-
-
 ![image](https://user-images.githubusercontent.com/36288975/171543866-5a6eace6-8683-49d7-9c4f-a7cb30ec3035.png)
+
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+/*1.create module encoder and decoder.
+
+2.Get inputs and outputs for encoders and decoders.
+
+3.perform or operation for encoder and and logic for decoders.
+
+4.perform RTL LOGIC and get waveform.*/
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: PRAVEEN S
+RegisterNumber: 212222240077
 */
+i]Encoder
 
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+ii]Decoder
 
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
 
+## RTL LOGIC  
+### Encoder
+![image](https://github.com/NathinR/Experiment-08-Encoders-and-decoders-/assets/118679646/163324cc-5635-4298-855c-daa0b8992f55)
 
+### Decoder
+![image](https://github.com/NathinR/Experiment-08-Encoders-and-decoders-/assets/118679646/3a63ac44-9b51-4447-aa13-942cb3ae2af2)
 
-### RTL LOGIC  
+## TIMING DIGRAMS  
+### Encoder
+![image](https://github.com/NathinR/Experiment-08-Encoders-and-decoders-/assets/118679646/af233e4b-f409-4ab1-abb3-638af9cab952)
 
+### Decoder
+![image](https://github.com/NathinR/Experiment-08-Encoders-and-decoders-/assets/118679646/07b1d303-ff53-41c6-9c1e-861546cb6cc8)
 
+## TRUTH TABLE 
+### Encoder
+![image](https://github.com/NathinR/Experiment-08-Encoders-and-decoders-/assets/118679646/c8fca45d-bfda-42f0-a3e3-a879e7425812)
 
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
+### Decoder
+![image](https://github.com/NathinR/Experiment-08-Encoders-and-decoders-/assets/118679646/65dc08a0-5bcd-4ff2-ba4e-1a4a6a2384be)
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is done.
